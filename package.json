@@ -30,6 +30,7 @@
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.13",
+    "skrollr": "^0.6.26",
     "typeface-lato": "0.0.54",
     "typeface-lora": "0.0.54",
     "typeface-playfair-display": "0.0.54",
