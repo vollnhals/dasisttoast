@@ -11,7 +11,11 @@ class BlogIndex extends React.Component {
   componentDidMount() {
     if (skrollr) {
       skrollr.init({
-        forceHeight: false
+        forceHeight: false,
+        render: function(data) {
+          //Log the current scroll position.
+          console.log(data.curTop);
+        }
       });
     }
   }
@@ -37,13 +41,14 @@ class BlogIndex extends React.Component {
           }}>
           <h1
             data-0="padding-top[swing]:47vh;"
-            data-200="padding-top[swing]:-0vh;"
+            data-150="padding-top[swing]:0vh;"
             style={{
               ...scale(2.7),
               marginBottom: rhythm(0.3),
               paddingTop: `47vh`,
               textAlign: `right`,
               marginRight: `10vw`,
+              color: 'black',
             }}
           >
             <Link
@@ -57,16 +62,26 @@ class BlogIndex extends React.Component {
               {siteTitle}
             </Link>
           </h1>
-          <p
-            style={{
-              textAlign: `right`,
-              marginLeft: `1.0875rem`,
-              marginRight: `10vw`,
-              marginBottom: rhythm(1.5),
-            }}
+          <div
+            data-0="position: static; top: 1.15vh; width: 100%"
+            // calculate with -cos(x*pi)/2+0,5 and change of padding-top of element above
+            data-134="position: sticky; top: 1.4738732469vh; width: 100%"
           >
-            Geschichten von <strong>Lion Vollnhals</strong> auf der Suche nach der Wahrheit.
-          </p>
+            <p
+              data-100="color[swing]:rgb(0,0,0);opacity: 1;"
+              data-150="color[swing]:rgb(255,255,255);opacity: 1;"
+              data-250="opacity: 0;"
+              style={{
+                textAlign: `right`,
+                marginLeft: `1.0875rem`,
+                marginRight: `10vw`,
+                marginBottom: rhythm(1.5),
+                color: 'black',
+              }}
+            >
+              Geschichten von <strong>Lion Vollnhals</strong> auf der Suche nach der Wahrheit.
+            </p>
+          </div>
         </div>
         <div
           style={{
@@ -79,16 +94,36 @@ class BlogIndex extends React.Component {
             {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
-                <div key={node.fields.slug}>
-                  <h3
+                <div
+                  key={node.fields.slug}
+                  style={{
+                    marginBottom: rhythm(5)
+                  }}
+                >
+                  <div
                     style={{
-                      marginBottom: rhythm(1 / 4),
+                      WebkitBackgroundClip: "text",
+                      color: "transparent !important",
+                      backgroundImage: "url('https://www.apple.com/v/iphone-xr/a/images/overview/copy_texture_4_large.jpg')",
+                      backgroundPosition: `${Math.random() * 587}px ${Math.random() * 162}px`
                     }}
                   >
-                    <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                      {title}
-                    </Link>
-                  </h3>
+                    <h2
+                      className="big-text"
+                      style={{
+                        marginBottom: rhythm(1 / 4),
+                      }}
+                    >
+                      <Link
+                        style={{
+                          boxShadow: `none`,
+                        }}
+                        to={node.fields.slug}
+                      >
+                        {title}
+                      </Link>
+                    </h2>
+                  </div>
                   <small>{node.frontmatter.date}</small>
                   <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
                 </div>

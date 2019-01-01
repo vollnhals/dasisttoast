@@ -5,14 +5,21 @@ Object.assign(Alton, {
     baseFontSize: '18px',
     headerFontFamily: ['Lato', 'Helvetica', 'sans-serif'],
     bodyFontFamily: ['Lora', 'Georgia', 'serif'],
+    bodyColor: 'white',
     // we load fonts ourselves
     googleFonts: [],
     overrideThemeStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
         h1: {
-            fontFamily: ['Playfair Display', 'Georgia', 'serif'].join(','),
+          fontFamily: ['Playfair Display', 'Georgia', 'serif'].join(','),
+        },
+        'h2.big-text': {
+          ...adjustFontSizeTo('48px'),
+        },
+        'h2.big-text a': {
+          color: "transparent"
         },
         'a.gatsby-resp-image-link': {
-            boxShadow: `none`,
+          boxShadow: `none`,
         },
     })
 })
