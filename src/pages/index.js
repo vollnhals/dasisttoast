@@ -31,7 +31,7 @@ class BlogIndex extends React.Component {
         data-125="background-color[swing]:rgb(0,0,0);"
       >
         <SEO
-            title={siteTitle}
+            title="Wahrheit"
             keywords={[`blog`, `lion vollnhals`, `aufwachen`, `spiritualität`]}
         />
         <div
