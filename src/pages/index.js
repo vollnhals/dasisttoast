@@ -142,7 +142,8 @@ class BlogIndex extends React.Component {
                         style={{
                           boxShadow: `none`,
                         }}
-                        to={node.fields.slug}
+                        to="/"
+                        // to={node.fields.slug}
                       >
                         {title}
                       </Link>
@@ -222,7 +223,8 @@ class BlogIndex extends React.Component {
                         style={{
                           boxShadow: `none`,
                         }}
-                        to={node.fields.slug}
+                        to="/"
+                        //to={node.fields.slug}
                       >
                         {title}
                       </Link>
