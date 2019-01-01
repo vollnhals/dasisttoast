@@ -3,6 +3,10 @@ import 'typeface-playfair-display'
 import 'typeface-lato'
 import 'typeface-lora'
 
+import skrollr from 'skrollr'
+
+window.skrollr = skrollr
+
 // import skrollr from 'skrollr'
 //
 // skrollr.init({

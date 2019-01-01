@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import skrollr from 'skrollr'
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
@@ -94,12 +93,6 @@ class BlogIndex extends React.Component {
           <Layout location={this.props.location} title={siteTitle}>
             <div>
               <div
-                  style={{
-                    WebkitBackgroundClip: "text",
-                    color: "transparent !important",
-                    backgroundImage: "url('https://www.apple.com/v/iphone-xr/a/images/overview/copy_texture_4_large.jpg')",
-                    backgroundPosition: `200px 30px`
-                  }}
               >
                 <h2
                     className="big-text"
@@ -175,11 +168,7 @@ class BlogIndex extends React.Component {
             <div>
               <div
                   style={{
-                    WebkitBackgroundClip: "text",
-                    color: "transparent !important",
-                    backgroundImage: "url('https://www.apple.com/v/iphone-xr/a/images/overview/copy_texture_4_large.jpg')",
-                    backgroundPosition: `200px 30px`,
-                    marginTop: "5rem"
+                    marginTop: "6rem"
                   }}
               >
                 <h2
