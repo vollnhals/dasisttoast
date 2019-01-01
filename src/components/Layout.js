@@ -5,7 +5,7 @@ import { rhythm, scale } from '../utils/typography'
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
+    const { footer, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
 
     return (
@@ -18,9 +18,6 @@ class Layout extends React.Component {
         }}
       >
         {children}
-        <footer>
-          © 2018, Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
       </div>
     )
   }

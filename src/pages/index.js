@@ -90,14 +90,38 @@ class BlogIndex extends React.Component {
           data-50-bottom-top="margin-top[swing]:15vh;"
           data--50-bottom-top="margin-top[swing]:-50vh;"
         >
+
           <Layout location={this.props.location} title={siteTitle}>
-            {posts.map(({ node }) => {
+            <div>
+              <div
+                  style={{
+                    WebkitBackgroundClip: "text",
+                    color: "transparent !important",
+                    backgroundImage: "url('https://www.apple.com/v/iphone-xr/a/images/overview/copy_texture_4_large.jpg')",
+                    backgroundPosition: `200px 30px`
+                  }}
+              >
+                <h2
+                    className="big-text"
+                    style={{
+                      ...scale(2),
+                      marginBottom: rhythm(5),
+                    }}
+                >
+                  Charakter. Werte. Überzeugungen.
+                </h2>
+              </div>
+            </div>
+
+            {posts.map(({ node }, index) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
                 <div
                   key={node.fields.slug}
                   style={{
-                    marginBottom: rhythm(5)
+                    marginBottom: rhythm(5),
+                    marginLeft: `${index % 2 * 7}rem`,
+                    marginRight: `${(index + 1) % 2 * 7}rem`
                   }}
                 >
                   <div
@@ -124,12 +148,92 @@ class BlogIndex extends React.Component {
                       </Link>
                     </h2>
                   </div>
-                  <small>{node.frontmatter.date}</small>
                   <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
                 </div>
               )
             })}
           </Layout>
+
+          <img
+            width="100%"
+            src="https://images.unsplash.com/photo-1545866166-46b09640a60f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80&h=400"
+          />
+
+          <Layout location={this.props.location} title={siteTitle}>
+            <div>
+              <div
+                  style={{
+                    WebkitBackgroundClip: "text",
+                    color: "transparent !important",
+                    backgroundImage: "url('https://www.apple.com/v/iphone-xr/a/images/overview/copy_texture_4_large.jpg')",
+                    backgroundPosition: `200px 30px`,
+                    marginTop: "7rem"
+                  }}
+              >
+                <h2
+                    className="big-text"
+                    style={{
+                      ...scale(2),
+                      marginBottom: rhythm(5),
+                    }}
+                >
+                  Philosophie.<br /> Tod. Keine Widergeburt
+                </h2>
+              </div>
+            </div>
+
+            {posts.map(({ node }, index) => {
+              const title = node.frontmatter.title || node.fields.slug
+              return (
+                <div
+                  key={node.fields.slug}
+                  style={{
+                    marginBottom: rhythm(5),
+                    marginLeft: `${index % 2 * 7}rem`,
+                    marginRight: `${(index + 1) % 2 * 7}rem`
+                  }}
+                >
+                  <div
+                    style={{
+                      WebkitBackgroundClip: "text",
+                      color: "transparent !important",
+                      backgroundImage: "url('https://www.apple.com/v/iphone-xr/a/images/overview/copy_texture_4_large.jpg')",
+                      backgroundPosition: `${Math.random() * 587}px ${Math.random() * 162}px`
+                    }}
+                  >
+                    <h2
+                      className="big-text"
+                      style={{
+                        marginBottom: rhythm(1 / 4),
+                      }}
+                    >
+                      <Link
+                        style={{
+                          boxShadow: `none`,
+                        }}
+                        to={node.fields.slug}
+                      >
+                        {title}
+                      </Link>
+                    </h2>
+                  </div>
+                  <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                </div>
+              )
+            })}
+
+          </Layout>
+
+          <div
+            //data-0-bottom-top="back"
+            style={{
+              minHeight: "40rem",
+              marginTop: "-7rem",
+              background: "linear-gradient(rgba(0,0,0,1), 20%, rgba(0,0,0,0)), url('https://cdn-images-1.medium.com/max/2000/0*fsBLpwQXDgVVJkYz.') no-repeat center center",
+              backgroundSize: "cover"
+            }}
+          >
+          </div>
         </div>
       </div>
     )

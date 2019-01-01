@@ -1,5 +1,5 @@
 ---
-title: Die Reise beginnt
+title: Niemand weiß was richtig ist
 date: '2015-05-28T22:40:32.169Z'
 ---
 
