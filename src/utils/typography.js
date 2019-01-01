@@ -1,21 +1,27 @@
 import Typography from 'typography'
-import Wordpress2016 from 'typography-theme-wordpress-2016'
+import Alton from 'typography-theme-alton'
 
-Wordpress2016.overrideThemeStyles = () => {
-  return {
-    'a.gatsby-resp-image-link': {
-      boxShadow: `none`,
-    },
-  }
-}
+Object.assign(Alton, {
+    baseFontSize: '18px',
+    headerFontFamily: ['Lato', 'Helvetica', 'sans-serif'],
+    bodyFontFamily: ['Lora', 'Georgia', 'serif'],
+    // we load fonts ourselves
+    googleFonts: [],
+    overrideThemeStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
+        h1: {
+            fontFamily: ['Playfair Display', 'Georgia', 'serif'].join(','),
+        },
+        'a.gatsby-resp-image-link': {
+            boxShadow: `none`,
+        },
+    })
+})
 
-delete Wordpress2016.googleFonts
-
-const typography = new Typography(Wordpress2016)
+const typography = new Typography(Alton)
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
-  typography.injectStyles()
+    typography.injectStyles()
 }
 
 export default typography
