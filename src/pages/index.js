@@ -154,10 +154,21 @@ class BlogIndex extends React.Component {
             })}
           </Layout>
 
-          <img
-            width="100%"
-            src="https://images.unsplash.com/photo-1545866166-46b09640a60f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80&h=400"
-          />
+
+          <div
+
+              //data-0-bottom-top="back"
+              style={{
+                minHeight: "35rem",
+                marginTop: "-5rem",
+                //background: "linear-gradient(rgba(0,0,0,1), 20%, rgba(0,0,0,0)), url('https://images.unsplash.com/photo-1455072414764-a3fb958b8415?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2560&q=80') no-repeat center center",
+                background: "url('https://images.unsplash.com/photo-1494376949337-b03b073844d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80') no-repeat center center",
+                backgroundSize: "cover",
+                //backgroundPosition: "0px 0px"
+              }}
+          >
+          </div>
+
 
           <Layout location={this.props.location} title={siteTitle}>
             <div>
@@ -167,7 +178,7 @@ class BlogIndex extends React.Component {
                     color: "transparent !important",
                     backgroundImage: "url('https://www.apple.com/v/iphone-xr/a/images/overview/copy_texture_4_large.jpg')",
                     backgroundPosition: `200px 30px`,
-                    marginTop: "7rem"
+                    marginTop: "5rem"
                   }}
               >
                 <h2
@@ -228,7 +239,7 @@ class BlogIndex extends React.Component {
             //data-0-bottom-top="back"
             style={{
               minHeight: "40rem",
-              marginTop: "-7rem",
+              marginTop: "-5rem",
               background: "linear-gradient(rgba(0,0,0,1), 20%, rgba(0,0,0,0)), url('https://cdn-images-1.medium.com/max/2000/0*fsBLpwQXDgVVJkYz.') no-repeat center center",
               backgroundSize: "cover"
             }}
